@@ -3,4 +3,4 @@ from django.db import models
 
 class Blog(models.Model):
     title = models.CharField(max_length=100)
-    content = models.CharField()
+    content = models.TextField(max_length=2000)
