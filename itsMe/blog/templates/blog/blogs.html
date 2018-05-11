@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block head %}
+    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block main %}
-{#    <div class="page-header">#}
     {% if not user.is_anonymous %}
-    <form class="form-signin" action="{% url 'home' %}" method="post" role="form">
+    <form  action="{% url 'home' %}" method="post" role="form">
       {% csrf_token %}
       {% for field in form.visible_fields %}
         <div class="form-group{% if field.errors %} has-error{% endif %}">
@@ -20,11 +23,10 @@
       {% endfor %}
       <button type="submit" class="btn  btn-primary ">发布</button>
     </form>
-
     {% endif %}
 
     {% for blog in blogs %}
     {% include 'blog/_blogs.html' with blog=blog%}
     {% endfor %}
-{#    </div>#}
+
 {% endblock %}
