@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container">
+
     {% if form.non_field_errors %}
       {% for error in form.non_field_errors %}
         <div class="alert alert-danger alert-dismissable">
@@ -38,6 +38,5 @@
         </div>
       </form>
 
-    </div> <!-- /container -->
 
 {% endblock %}

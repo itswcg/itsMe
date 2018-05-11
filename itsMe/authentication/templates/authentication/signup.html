@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block main %}
-  <div class="container">
     <form class="form-signin" action="{% url 'signup' %}" method="post" role="form">
       {% csrf_token %}
       {% for field in form.visible_fields %}
@@ -23,5 +22,4 @@
       {% endfor %}
       <button type="submit" class="btn btn-lg btn-primary btn-block">注册</button>
     </form>
-  </div>
 {% endblock %}

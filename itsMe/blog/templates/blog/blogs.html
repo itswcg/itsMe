@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block main %}
-    <div class="page-container">
+{#    <div class="page-header">#}
     {% if not user.is_anonymous %}
     <form class="form-signin" action="{% url 'home' %}" method="post" role="form">
       {% csrf_token %}
@@ -20,10 +20,11 @@
       {% endfor %}
       <button type="submit" class="btn  btn-primary ">发布</button>
     </form>
-  </div>
+
     {% endif %}
 
     {% for blog in blogs %}
     {% include 'blog/_blogs.html' with blog=blog%}
     {% endfor %}
+{#    </div>#}
 {% endblock %}
