@@ -22,7 +22,7 @@ class SignUpForm(forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ['email', 'username', 'password', 'confirm_password']
+        fields = ['email', 'username', 'password', 'confirm_password', 'captcha']
 
     def clean(self):
         super(SignUpForm, self).clean()
@@ -31,3 +31,5 @@ class SignUpForm(forms.ModelForm):
         if password and password != confirm_password:
             self._errors['password'] = self.error_class(['密码不匹配'])
         return self.cleaned_data
+
+# class ProfileForm(forms.ModelForm):
