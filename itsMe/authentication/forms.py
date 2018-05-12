@@ -1,5 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
+from captcha.fields import CaptchaField
 
 
 class SignUpForm(forms.ModelForm):
@@ -17,6 +18,7 @@ class SignUpForm(forms.ModelForm):
     confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}),
                                label='确认密码',
                                required=True)
+    captcha = CaptchaField(label='验证码')
 
     class Meta:
         model = User

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'itsMe.authentication',
+    'captcha',
     'itsMe.blog',
 ]
 

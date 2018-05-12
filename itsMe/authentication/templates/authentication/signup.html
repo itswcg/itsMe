@@ -8,6 +8,7 @@
 {% block main %}
     <form class="form-signin" action="{% url 'signup' %}" method="post" role="form">
       {% csrf_token %}
+    <center><h2 class="form-signin-heading">itsMe注册</h2></center>
       {% for field in form.visible_fields %}
         <div class="form-group{% if field.errors %} has-error{% endif %}">
           <label for="{{ field.label }}">{{ field.label }}</label>
