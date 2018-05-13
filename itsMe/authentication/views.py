@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
-from .forms import SignUpForm
+from .forms import SignUpForm, ProfileForm
+from django.contrib.auth.decorators import login_required
 
 def signup(request):
     if request.method != 'POST':
@@ -22,3 +23,19 @@ def signup(request):
     login(request, user)
 
     return redirect('/')
+#
+# @login_required
+def setting(request):
+    user = request.user
+    if request.method == 'POST':
+        form = ProfileForm(request.POST)
+
+        if form.is_valid():
+            new_password = form.cleaned_data.get('new_password')
+            user.set_password(new_password)
+            user.save()
+
+    else:
+        form = ProfileForm(instance=user)
+
+    return render(request, 'authentication/setting.html', {'form': form})

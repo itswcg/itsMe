@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Blog
 from .forms import BlogForm
 
-
+# @login_required
 def blog(request):
     user = request.user
     blogs = Blog.objects.all()
@@ -17,15 +17,3 @@ def blog(request):
 
     return redirect('/')
 
-@login_required
-def write(request):
-    user = request.user
-    content = request.POST.get('blog')
-
-    if len(content) > 0:
-        Blog.objects.create(
-            author=user,
-            content=content
-        )
-
-    return redirect('/')

@@ -32,4 +32,15 @@ class SignUpForm(forms.ModelForm):
             self._errors['password'] = self.error_class(['密码不匹配'])
         return self.cleaned_data
 
-# class ProfileForm(forms.ModelForm):
+
+class ProfileForm(forms.ModelForm):
+    # sex = forms.CharField(max_length=1, widget=forms.Select(choices=(
+    #     ('B', 'Boy'),
+    #     ('G', 'Girl'),
+    # )))
+    new_password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control'}),
+                                   label='修改密码', required=False)
+
+    class Meta:
+        model = User
+        fields = ['new_password']
