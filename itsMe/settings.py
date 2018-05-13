@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'itsMe.authentication',
     'captcha',
     'itsMe.blog',
+    'itsMe.todo',
 ]
 
 MIDDLEWARE = [
