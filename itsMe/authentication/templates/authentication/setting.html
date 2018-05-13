@@ -6,8 +6,17 @@
 {% endblock %}
 
 {% block main %}
+    {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
     <form class="form-signin" action="{% url 'setting' %}" method="post" role="form">
       {% csrf_token %}
+        {{ form.id }}
     <center><h2 class="form-signin-heading">设置</h2></center>
       {% for field in form.visible_fields %}
         <div class="form-group{% if field.errors %} has-error{% endif %}">

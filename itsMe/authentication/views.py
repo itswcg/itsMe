@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import login, authenticate
 from .forms import SignUpForm, ProfileForm
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
 def signup(request):
@@ -24,9 +25,10 @@ def signup(request):
 
     return redirect('/')
 #
-# @login_required
+@login_required
 def setting(request):
     user = request.user
+    username = user.username
     if request.method == 'POST':
         form = ProfileForm(request.POST)
 
@@ -35,6 +37,11 @@ def setting(request):
             user.set_password(new_password)
             user.save()
 
+            message = '修改成功'
+            messages.add_message(request, messages.SUCCESS, message)
+
+            new_user = authenticate(username=username, password=new_password)
+            login(request, new_user)
     else:
         form = ProfileForm(instance=user)
 
