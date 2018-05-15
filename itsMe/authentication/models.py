@@ -19,7 +19,7 @@ class Profile(models.Model):
 
     def get_avatar(self):
         if not self.avatar:
-            no_avatar = 'static/img/user.png'
+            no_avatar = '/static/img/user.png'
             return no_avatar
         return self.avatar
 

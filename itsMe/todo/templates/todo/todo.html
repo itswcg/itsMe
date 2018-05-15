@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block head %}
+    <link href="{% static 'css/todo.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block main %}
-    <div class="page-header">
+
     {% if not user.is_anonymous %}
-        <p>任务清单</p>
         <button type='button' class="btn btn-primary pull-right btn-compose" data-toggle="modal" data-target="#myModal">jia</button>
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -22,12 +25,12 @@
                  </div>
                 </div>
                 </div>
-        </div>
+        <ul class="posts">
         {% for todo in todoList %}
             {% include 'todo/_todo.html' with todo=todo %}
         {% endfor %}
         {% for todo in doList %}
             {% include 'todo/_todo.html' with todo=todo %}
         {% endfor %}
-    {% endif %}
+    {% endif %}</ul>
 {% endblock %}
