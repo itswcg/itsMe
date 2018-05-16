@@ -3,7 +3,7 @@
   <h4>{{ todo.content }}</h4>
 <div class="post-footer">
     {% if not todo.is_do %}
-    <a class="btn btn-danger btn-xs" href="{% url 'todoFinish' todo.id %}">标记完成</a>
+    <a class="btn btn-success btn-xs" href="{% url 'todoFinish' todo.id %}">标记完成</a>
         {% else %}
         <a class="btn btn-default btn-xs" href="{% url 'todoUnfinish' todo.id %}">已完成</a>
     {% endif %}</div>

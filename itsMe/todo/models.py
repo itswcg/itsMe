@@ -8,7 +8,7 @@ class Todo(models.Model):
     is_do = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.todo
+        return self.content
 
     class Meta:
         ordering = ['-create_date']

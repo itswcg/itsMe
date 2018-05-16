@@ -6,6 +6,9 @@
 {% endblock %}
 
 {% block main %}
+   <ul class="nav nav-tabs">
+        <li class="active"><a href="#">全部</a></li>{% if not user.is_anonymous %}
+        <li><a href="#">关注</a> </li></ul>{% endif %}
     {% if not user.is_anonymous %}
     <form  action="{% url 'home' %}" method="post" role="form">
       {% csrf_token %}
