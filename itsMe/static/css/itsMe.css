@@ -7,7 +7,6 @@ header .navbar {
   -webkit-box-shadow: 0 8px 6px -6px #999;
   -moz-box-shadow: 0 8px 6px -6px #999;
   box-shadow: 0 8px 6px -6px #999;
-  height: 10px !important;
   background-color: white;
 }
 
@@ -21,7 +20,7 @@ header .navbar-brand {
 main .container {
   margin-bottom: 2em;
   border: 1px solid #ddd;
-  background-color: #ffffff;
+  background-color: white;
   padding-top: 1.2em;
   padding-bottom: 1.2em;
   border-radius: .3em;

@@ -1,12 +1,5 @@
-<li class="post">
-<div class="post-content">
-  <h4>{{ todo.content }}</h4>
-<div class="post-footer">
-    {% if not todo.is_do %}
-    <a class="btn btn-success btn-xs" href="{% url 'todoFinish' todo.id %}">标记完成</a>
+{% if not todo.is_do %}
+    <a class="list-group-item list-group-item-danger" href="{% url 'todoFinish' todo.id %}">{{ todo.content }}</a>
         {% else %}
-        <a class="btn btn-default btn-xs" href="{% url 'todoUnfinish' todo.id %}">已完成</a>
-    {% endif %}</div>
-</div>
-
-</li>
+        <a class="list-group-item disabled" href="{% url 'todoUnfinish' todo.id %}">{{ todo.content }}</a>
+    {% endif %}
