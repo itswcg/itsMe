@@ -1,6 +1,6 @@
 body {
-  background-color: #f6f6f6;
   padding-top: 70px;
+  background-color: #e2e2e2 !important;
 }
 
 header .navbar-brand {
@@ -8,6 +8,7 @@ header .navbar-brand {
   font-weight: 200;
   font-family: "Audiowide", cursive;
 }
+
 
 main .container {
   margin-bottom: 2em;
