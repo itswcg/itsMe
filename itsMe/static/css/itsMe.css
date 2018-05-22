@@ -1,6 +1,14 @@
 body {
-  padding-top: 70px;
+  padding-top: 75px;
   background-color: #e2e2e2 !important;
+}
+
+header .navbar {
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+  height: 10px !important;
+  background-color: white;
 }
 
 header .navbar-brand {
