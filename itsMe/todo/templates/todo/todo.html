@@ -28,7 +28,16 @@
                  </div>
                 </div>
                 </div>
-    <h1>今天</h1>
+    <div style="color: #ccc" ><h2>今天</h2></div>
+        <div class="list-group" style="margin-top: 10px">
+        {% for todo in todoList_Today %}
+            {% include 'todo/_todo_Today.html' with todo=todo %}
+        {% endfor %}
+        {% for todo in doList_Today %}
+            {% include 'todo/_todo_Today.html' with todo=todo %}
+        {% endfor %}</div>
+
+        <div style="color: #ccc;" ><h2>往日</h2></div>
         <div class="list-group" style="margin-top: 10px">
         {% for todo in todoList %}
             {% include 'todo/_todo.html' with todo=todo %}
@@ -40,5 +49,9 @@
 {% endblock %}
 
 {% block right %}
-    <h1>dd </h1>
+    <div style="color: #ccc; text-align: left">
+    <div style="text-align: right; float: right">
+        <a href="{% url 'todoTask' %}"><span class="glyphicon glyphicon-pencil" ></span></a></div>待办</div><br>
+    <textarea class="form-control" rows="20" placeholder="{{ task.content }}" readonly></textarea>
+
 {% endblock %}

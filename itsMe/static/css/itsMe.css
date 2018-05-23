@@ -21,8 +21,8 @@ main .container{
   margin-bottom: 2em;
   border: 1px solid #ddd;
   background-color: #ffffff;
-  padding-top: 1.2em;
-  padding-bottom: 1.2em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
   border-radius: .3em;
   box-shadow: 0 1px 3px #cccccc;
   margin-left: 12%;
@@ -39,8 +39,8 @@ main .container{
     margin-bottom: 2em;
     border: 1px solid #ddd;
     background-color: #ffffff;
-    padding-top: 1.2em;
-    padding-bottom: 1.2em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
     border-radius: .3em;
     box-shadow: 0 1px 3px #cccccc;
     margin-left: 8%;
@@ -56,6 +56,8 @@ main .sidebar {
   background-color: #ffffff;
   padding-top: 1.2em;
   padding-bottom: 1.2em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
   border-radius: .3em;
   box-shadow: 0 1px 3px #cccccc;
   margin-right: 12%;
