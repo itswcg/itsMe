@@ -6,12 +6,8 @@
 {% endblock %}
 
 {% block main %}
-    <div class="row">
-    <div class="col-md-7">dd</div>
-    <div class="col-md-5">
     {% if not user.is_anonymous %}
-        <div style="text-align: right">
-        <button style="text-align: right" type='button'  class="btn btn-primary " data-toggle="modal" data-target=".bs-example-modal-sm">添加新的任务</button></div>
+        <button style="text-align: right" type='button'  class="btn btn-primary " data-toggle="modal" data-target=".bs-example-modal-sm">添加新的任务</button>
             <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog ">
             <div class="modal-content">
@@ -32,13 +28,17 @@
                  </div>
                 </div>
                 </div>
-
-        <div class="list-group" style="margin-top: 5px">
+    <h1>今天</h1>
+        <div class="list-group" style="margin-top: 10px">
         {% for todo in todoList %}
             {% include 'todo/_todo.html' with todo=todo %}
         {% endfor %}
         {% for todo in doList %}
             {% include 'todo/_todo.html' with todo=todo %}
         {% endfor %}</div>
-    {% endif %}</div></div>
+    {% endif %}
+{% endblock %}
+
+{% block right %}
+    <h1>dd </h1>
 {% endblock %}
