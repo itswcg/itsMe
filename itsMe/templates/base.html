@@ -62,20 +62,20 @@
                             <li><a href="{% url 'todo' %}">任务清单</a></li>
                             <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-plus"></span> <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">
                                     <li><a href="#">新的动态</a> </li>
                                     <li><a href="#">新的博客</a> </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ user.profile.get_avatar }}" height="22" width="22"><span class="caret"></span></a>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dLabel">
                                     <li><a href="#">我的动态</a></li>
                                     <li><a href="#">我的博客</a></li>
 {#                                    <li><a href="{% url 'inbox' %}"><span class="badge pull-right"#}
 {#                                                                          id="unread-count">0</span><span class="glyphicon glyphicon-comment">#}
 {#                        </span> 消息</a></li>#}
-{#                                    <hr >#}
+                                    <li role="separator" class="divider"></li>
                                     <li><a href="{% url 'setting' %}">设置</a></li>
                                     <li><a href="{% url 'logout' %}">退出</a></li>
                                 </ul>
