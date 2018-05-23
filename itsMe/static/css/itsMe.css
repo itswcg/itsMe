@@ -30,6 +30,26 @@ main .container{
   position: relative;
 }
 
+@media (max-width: 500px){
+  main .sidebar{
+    display: none;
+  }
+
+  main .container{
+    margin-bottom: 2em;
+    border: 1px solid #ddd;
+    background-color: #ffffff;
+    padding-top: 1.2em;
+    padding-bottom: 1.2em;
+    border-radius: .3em;
+    box-shadow: 0 1px 3px #cccccc;
+    margin-left: 8%;
+    margin-right: 8%;
+    width: auto;
+  }
+
+}
+
 main .sidebar {
   margin-bottom: 2em;
   border: 1px solid #ddd;
