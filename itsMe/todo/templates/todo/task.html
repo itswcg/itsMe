@@ -5,48 +5,21 @@
     <link href="{% static 'css/todo.css' %}" rel="stylesheet">
 {% endblock %}
 
-{#{% block main %}#}
-{#    {% if not user.is_anonymous %}#}
-{#        <button style="text-align: right" type='button'  class="btn btn-primary " data-toggle="modal" data-target=".bs-example-modal-sm">添加新的任务</button>#}
-{#            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">#}
-{#            <div class="modal-dialog ">#}
-{#            <div class="modal-content">#}
-{#            <div class="modal-header">#}
-{#                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>#}
-{#                <h4 class="modal-title" id="myModalLabel">添加</h4>#}
-{#            </div>#}
-{#            <div class="modal-body">#}
-{#                <form role="form" method="post" action="{% url 'todoAdd' %}">#}
-{#                {% csrf_token %}#}
-{#                <div class="form-group">#}
-{#                <textarea class="form-control" id="todo" name="todo" required placeholder="新的任务"></textarea>#}
-{#                    <div class="modal-footer">#}
-{#                    <button type="submit" class="btn btn-primary">提交</button>#}
-{#                    </div>#}
-{#            </div>#}
-{#                </form></div>#}
-{#                 </div>#}
-{#                </div>#}
-{#                </div>#}
-{#    <div style="color: #ccc" ><h2>今天</h2></div>#}
-{#        <div class="list-group" style="margin-top: 10px">#}
-{#        {% for todo in todoList_Today %}#}
-{#            {% include 'todo/_todo_Today.html' with todo=todo %}#}
-{#        {% endfor %}#}
-{#        {% for todo in doList_Today %}#}
-{#            {% include 'todo/_todo_Today.html' with todo=todo %}#}
-{#        {% endfor %}</div>#}
-{##}
-{#        <div style="color: #ccc;" ><h2>往日</h2></div>#}
-{#        <div class="list-group" style="margin-top: 10px">#}
-{#        {% for todo in todoList %}#}
-{#            {% include 'todo/_todo.html' with todo=todo %}#}
-{#        {% endfor %}#}
-{#        {% for todo in doList %}#}
-{#            {% include 'todo/_todo.html' with todo=todo %}#}
-{#        {% endfor %}</div>#}
-{#    {% endif %}#}
-{#{% endblock %}#}
+{% block main %}
+    <div style="float: right; color: blue"><span class="glyphicon glyphicon-ok
+glyphicon glyphicon-"></span></div>
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">编辑</a></li>
+  <li role="presentation"><a href="#">总结</a></li>
+</ul>
+    <div class="list-group">
+  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</div>
+{% endblock %}
 
 {% block right %}
     <form action="{% url 'todoTask' %}" method="post" role="form">
