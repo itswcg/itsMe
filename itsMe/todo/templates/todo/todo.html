@@ -45,6 +45,8 @@
         {% for todo in doList %}
             {% include 'todo/_todo.html' with todo=todo %}
         {% endfor %}</div>
+        <div style="float: right">
+    {% include 'paginator.html' with paginator=doList %}</div>
     {% endif %}
 {% endblock %}
 

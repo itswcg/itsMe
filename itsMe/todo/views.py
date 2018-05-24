@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Todo, Task
 from django.utils.timezone import now, timedelta
 
@@ -10,7 +11,16 @@ def todoList(request):
     todoList_Today = Todo.objects.filter(author=user, is_do=False, create_date__gte=today).all()
     doList_Today = Todo.objects.filter(author=user, is_do=True, create_date__gte=today).all()
     todoList = Todo.objects.filter(author=user, is_do=False, create_date__lt=today).all()
-    doList = Todo.objects.filter(author=user, is_do=True, create_date__lt=today).all
+    doList_page = Todo.objects.filter(author=user, is_do=True, create_date__lt=today).all()
+
+    paginator = Paginator(doList_page, 7)
+    page = request.GET.get('page')
+    try:
+        doList = paginator.page(page)
+    except PageNotAnInteger:
+        doList = paginator.page(1)
+    except EmptyPage:
+        doList = paginator.page(paginator.num_pages)
     return render(request,'todo/todo.html', {'todoList_Today': todoList_Today, 'doList_Today': doList_Today,
                                              'todoList': todoList, 'doList': doList, 'task': task})
 
