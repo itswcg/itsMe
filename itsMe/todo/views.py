@@ -13,7 +13,7 @@ def todoList(request):
     todoList = Todo.objects.filter(author=user, is_do=False, create_date__lt=today).all()
     doList_page = Todo.objects.filter(author=user, is_do=True, create_date__lt=today).all()
 
-    paginator = Paginator(doList_page, 7)
+    paginator = Paginator(doList_page, 8)
     page = request.GET.get('page')
     try:
         doList = paginator.page(page)
@@ -53,7 +53,7 @@ def todoDelete(request, id):
     todo = Todo.objects.get(pk=id)
     todo.delete()
 
-    return redirect('/todo/task/')
+    return redirect('/todo/edit/')
 
 def todoTask(request):
     user = request.user
@@ -63,6 +63,13 @@ def todoTask(request):
         Task.objects.create(author=user, content=task)
         return redirect('/todo/')
 
-    todoList = Todo.objects.filter(author=user).all()
-
+    todoList_all = Todo.objects.filter(author=user).all()
+    paginator = Paginator(todoList_all, 10)
+    page = request.GET.get('page')
+    try:
+        todoList = paginator.page(page)
+    except PageNotAnInteger:
+        todoList = paginator.page(1)
+    except EmptyPage:
+        todoList = paginator.page(paginator.num_pages)
     return render(request, 'todo/task.html', {'task': task_pre, 'todoList': todoList})

@@ -21,6 +21,8 @@ glyphicon glyphicon-"></span></a> </div>
         </div>
         {% endfor %}
 </div>
+    <div style="float: right">
+    {% include 'paginator.html' with paginator=todoList %}</div>
 {% endblock %}
 
 {% block right %}
