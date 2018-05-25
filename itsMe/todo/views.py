@@ -49,12 +49,20 @@ def todoUnfinish(request, id):
 
     return redirect('/todo/')
 
+def todoDelete(request, id):
+    todo = Todo.objects.get(pk=id)
+    todo.delete()
+
+    return redirect('/todo/task/')
+
 def todoTask(request):
     user = request.user
-    task1 = Task.objects.filter(author=user).last()
+    task_pre = Task.objects.filter(author=user).last()
     if request.method == 'POST':
         task = request.POST.get('task')
         Task.objects.create(author=user, content=task)
         return redirect('/todo/')
 
-    return render(request, 'todo/task.html', {'task': task1})
+    todoList = Todo.objects.filter(author=user).all()
+
+    return render(request, 'todo/task.html', {'task': task_pre, 'todoList': todoList})

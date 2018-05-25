@@ -6,18 +6,20 @@
 {% endblock %}
 
 {% block main %}
-    <div style="float: right; color: blue"><span class="glyphicon glyphicon-ok
-glyphicon glyphicon-"></span></div>
+    <div style="float: right; color: blue"><a href="{% url 'todo' %}"><span class="glyphicon glyphicon-ok
+glyphicon glyphicon-"></span></a> </div>
+    <div style="overflow: hidden; margin-bottom: 20px">
 <ul class="nav nav-pills">
   <li role="presentation" class="active"><a href="#">编辑</a></li>
   <li role="presentation"><a href="#">总结</a></li>
-</ul>
+</ul></div>
+
     <div class="list-group">
-  <li class="list-group-item">Cras justo odio</li>
-  <li class="list-group-item">Dapibus ac facilisis in</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
+    {% for todo in todoList %}
+        <div class="list-group-item" style="color: #8590a6">{{ todo.create_date.date }} | {{ todo }}
+            <div style="float: right; font-size: .8em; color: #e2e2e2"><a href="{% url 'todoDel' todo.id %}" ><span class="glyphicon glyphicon-remove"></span></a></div>
+        </div>
+        {% endfor %}
 </div>
 {% endblock %}
 
