@@ -19,7 +19,7 @@ glyphicon glyphicon-"></span></a> </div>
 
     <ul class="list-group">
     {% for todo in todoList %}
-        <li todo-id="{{ todo.pk }}"  class="list-group-item" style="color: #8590a6">{{ todo.create_date.date }} | {{ todo }}
+        <li todo-id="{{ todo.pk }}"  class="list-group-item" style="color: #8590a6">{{ todo.create_date.date|date:'Y-m-d'}} &nbsp;|&nbsp; {{ todo }}
             <span class="glyphicon glyphicon-remove remove-todo"></span>
         </li>
         {% endfor %}
