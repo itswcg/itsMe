@@ -34,6 +34,15 @@ def todoAdd(request):
 
     return redirect('/todo/')
 
+def todoUpdate(request, id):
+    todo = Todo.objects.get(pk=id)
+    if request.method == 'POST':
+        content = request.POST.get('todo')
+        todo.content = content
+        todo.save()
+
+    return redirect('/todo/edit/')
+
 
 def todoFinish(request, id):
     todo = Todo.objects.get(pk=id)
