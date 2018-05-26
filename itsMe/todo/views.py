@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from .models import Todo, Task
 from django.utils.timezone import now, timedelta
@@ -49,11 +50,12 @@ def todoUnfinish(request, id):
 
     return redirect('/todo/')
 
-def todoDelete(request, id):
-    todo = Todo.objects.get(pk=id)
+def todoDelete(request):
+    todo_id = request.GET.get('todo-id')
+    todo = Todo.objects.get(pk=todo_id)
     todo.delete()
 
-    return redirect('/todo/edit/')
+    return HttpResponse()
 
 def todoTask(request):
     user = request.user

@@ -3,6 +3,9 @@
 
 {% block head %}
     <link href="{% static 'css/todo.css' %}" rel="stylesheet">
+{#    <script src="{% static 'js/jquery.bullseye-1.0-min.js' %}"></script>#}
+    <script src="{% static 'js/todo.js' %}"></script>
+
 {% endblock %}
 
 {% block main %}
@@ -14,13 +17,13 @@ glyphicon glyphicon-"></span></a> </div>
   <li role="presentation"><a href="#">总结</a></li>
 </ul></div>
 
-    <div class="list-group">
+    <ul class="list-group">
     {% for todo in todoList %}
-        <div class="list-group-item" style="color: #8590a6">{{ todo.create_date.date }} | {{ todo }}
-            <div style="float: right; font-size: .8em; color: #e2e2e2"><a href="{% url 'todoDel' todo.id %}" ><span class="glyphicon glyphicon-remove"></span></a></div>
-        </div>
+        <li todo-id="{{ todo.pk }}"  class="list-group-item" style="color: #8590a6">{{ todo.create_date.date }} | {{ todo }}
+            <span class="glyphicon glyphicon-remove remove-todo"></span>
+        </li>
         {% endfor %}
-</div>
+</ul>
     <div style="float: right">
     {% include 'paginator.html' with paginator=todoList %}</div>
 {% endblock %}

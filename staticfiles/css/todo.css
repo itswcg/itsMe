@@ -1,0 +1,12 @@
+.remove-todo {
+  color: #bbbbbb;
+  font-size: .8em;
+  padding-top: .2em;
+  float: right;
+  display: none;
+  cursor: pointer;
+}
+
+.remove-todo:hover {
+  color: #333333;
+}

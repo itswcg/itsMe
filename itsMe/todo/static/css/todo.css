@@ -1,28 +1,12 @@
-.tabs-advanced {
-    display: table;
-    border: none;
+.remove-todo {
+  color: #bbbbbb;
+  font-size: .8em;
+  padding-top: .2em;
+  float: right;
+  display: none;
+  cursor: pointer;
 }
 
-.tabs-advanced > li{
-    display: table-cell;
-    float: none;
-}
-
-.tabs-advanced > li > a{
-    margin-right: 0;
-    border-bottom-style: none;
-}
-
-.tabs-advanced > li:not(.active):not(:hover) {
-    border-bottom: 1px solid #ddd;
-}
-
-.tabs-advanced > li.filler{
-    width: 100%;
-    border-bottom: 1px solid #ddd;
-}
-
-.tabs-advanced > li.in-between-filler{
-    min-width: 2px;
-    border-bottom: 1px solid #ddd;
+.remove-todo:hover {
+  color: #333333;
 }
