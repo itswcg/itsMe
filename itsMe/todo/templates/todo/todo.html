@@ -7,8 +7,8 @@
 
 {% block main %}
     {% if not user.is_anonymous %}
-        <button style="text-align: right" type='button'  class="btn btn-primary " data-toggle="modal" data-target=".bs-example-modal-sm">添加新的任务</button>
-            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <button style="text-align: right" type='button'  class="btn btn-primary " data-toggle="modal" data-target="#myModal">添加新的任务</button>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog ">
             <div class="modal-content">
             <div class="modal-header">
