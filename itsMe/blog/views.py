@@ -15,5 +15,5 @@ def blog(request):
         content = form.cleaned_data.get('content')
         Blog.objects.create(author=user, content=content)
 
-    return redirect('/')
+    return redirect('')
 

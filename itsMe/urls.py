@@ -22,9 +22,9 @@ from .authentication import views as authentication_views
 
 
 urlpatterns = [
-    path('itswcg/', admin.site.urls),
+    path('admin/', admin.site.urls),
 
-    path('', blog_view.blog, name='blog'),
+    path('', blog_view.blog, name='home'),
     path('login/', auth_views.login, {'template_name': 'authentication/login.html'}, name='login'),
     path('logout/', auth_views.logout, {'next_page': '/'}, name='logout'),
     path('signup/', authentication_views.signup, name='signup'),
