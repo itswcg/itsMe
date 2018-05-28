@@ -1,7 +1,5 @@
-<div class="blog">
-    <div class="blog-title">{{ blog.title }}</div>
+<div class="blog-list">
+    <div class="blog-title"><a href="{% url 'blog' blog.id %}" target="_blank" >{{ blog.title }}</a></div>
     <div class="blog-content">{{ blog.content }}</div>
     <div class="blog-footer">{{ blog.create_date }}</div>
-
-
 </div>

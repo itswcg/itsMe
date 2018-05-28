@@ -1,6 +1,6 @@
 .remove-todo {
   color: #bbbbbb;
-  font-size: .8em;
+  font-size: .5em;
   padding-top: .2em;
   float: right;
   display: none;
@@ -8,5 +8,17 @@
 }
 
 .remove-todo:hover {
+  color: #333333;
+}
+
+.edit-todo {
+  color: #bbbbbb;
+  font-size: .5em;
+  padding-top: .2em;
+  display: none;
+  cursor: pointer;
+}
+
+.edit-todo:hover {
   color: #333333;
 }

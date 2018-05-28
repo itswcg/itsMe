@@ -4,20 +4,22 @@ from .models import Blog
 from .forms import BlogForm
 
 # @login_required
-def blog(request):
+def blogs(request):
     user = request.user
-    blogs = Blog.objects.all()
-    if request.method != 'POST':
-        return render(request, 'blog/blogs.html', {'form': BlogForm, 'blogs': blogs})
+    blogs = Blog.objects.filter(author=user)
 
-    form = BlogForm(request.POST)
-    if form.is_valid():
-        title = '测试，哈哈啊哈'
-        content = form.cleaned_data.get('content')
-        Blog.objects.create(author=user, content=content, title=title)
+    return render(request, 'blog/blogs.html', {'blogs': blogs})
 
-    return redirect('/')
+def blog(request, id):
+    blog = Blog.objects.get(pk=id)
+    return render(request, 'blog/blog.html', {'blog': blog})
 
 
-def blogAdd(request):
+def blogWrite(request):
+    pass
+
+def blogEdit(request):
+    pass
+
+def blogDelete(request):
     pass

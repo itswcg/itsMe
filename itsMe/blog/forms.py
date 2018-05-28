@@ -1,10 +1,10 @@
 from django import forms
 from .models import Blog
+from martor.fields import MartorFormField
 
 class BlogForm(forms.ModelForm):
-    content = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}),
-                           max_length=3000,
-                           label='你的想法')
+
+    content = MartorFormField()
 
     class Meta:
         model = Blog

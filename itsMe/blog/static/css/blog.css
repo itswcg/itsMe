@@ -1,4 +1,4 @@
-.blog {
+.blog-list {
     position: relative;
     width: 100%;
     margin: 0 0 15px;
@@ -7,22 +7,33 @@
     word-wrap: break-word;
 }
 
-.blog .blog-title {
+.blog-list .blog-title {
     margin: -7px 0 4px;
     display: inherit;
     font-size: 22px;
     font-weight: 700;
-    line-height: 1.5
+    line-height: 1.5;
 }
 
-.blog .blog-content {
+.blog-list .blog-title a:link {
+    color: #333;
+    }
+.blog-list .blog-title a:visited {
+    color: #333;
+    }
+
+.blog-list .blog-title a:hover{
+    color:#406599;
+    }
+
+.blog-list .blog-content {
     margin: 0 0 8px;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 24px;
     color: #999
 }
 
-.blog .blog-footer {
+.blog-list .blog-footer {
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;

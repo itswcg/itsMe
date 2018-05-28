@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'itsMe.authentication',
     'captcha',
+    'martor',
     'itsMe.blog',
     'itsMe.todo',
 ]

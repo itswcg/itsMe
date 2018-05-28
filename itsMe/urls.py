@@ -24,11 +24,13 @@ from .authentication import views as authentication_views
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', blog_view.blog, name='home'),
+    path('', blog_view.blogs, name='home'),
     path('login/', auth_views.login, {'template_name': 'authentication/login.html'}, name='login'),
     path('logout/', auth_views.logout, {'next_page': '/'}, name='logout'),
     path('signup/', authentication_views.signup, name='signup'),
     path('captcha/', include('captcha.urls')),
+    path('martor/', include('martor.urls')),
     path('setting/', include('itsMe.authentication.urls')),
-    path('todo/', include('itsMe.todo.urls'))
+    path('todo/', include('itsMe.todo.urls')),
+    path('blog/', include('itsMe.blog.urls')),
 ]
