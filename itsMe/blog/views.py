@@ -12,8 +12,12 @@ def blog(request):
 
     form = BlogForm(request.POST)
     if form.is_valid():
+        title = '测试，哈哈啊哈'
         content = form.cleaned_data.get('content')
-        Blog.objects.create(author=user, content=content)
+        Blog.objects.create(author=user, content=content, title=title)
 
-    return redirect('')
+    return redirect('/')
 
+
+def blogAdd(request):
+    pass

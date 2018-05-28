@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Blog(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    content = models.TextField(max_length=2000)
+    content = models.TextField(max_length=20000)
     create_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:

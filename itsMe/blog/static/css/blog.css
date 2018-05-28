@@ -1,0 +1,30 @@
+.blog {
+    position: relative;
+    width: 100%;
+    margin: 0 0 15px;
+    padding: 15px 2px 20px 0;
+    border-bottom: 1px solid #f0f0f0;
+    word-wrap: break-word;
+}
+
+.blog .blog-title {
+    margin: -7px 0 4px;
+    display: inherit;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.5
+}
+
+.blog .blog-content {
+    margin: 0 0 8px;
+    font-size: 15px;
+    line-height: 24px;
+    color: #999
+}
+
+.blog .blog-footer {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #b4b4b4;
+}
